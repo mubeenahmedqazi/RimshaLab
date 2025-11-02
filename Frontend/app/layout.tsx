@@ -18,8 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-gray-50 text-gray-900">
         {/* ✅ Fixed Navbar */}
         <div className="fixed top-0 left-0 w-full z-50">
-          <Navbar />
           <TickerBanner />
+          <Navbar />
+          
         </div>
 
         {/* ✅ Main content (adjust padding to push content below navbar + ticker) */}

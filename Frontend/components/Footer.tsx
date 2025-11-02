@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-800 text-white py-20 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-800 text-white py-10 overflow-hidden">
       {/* 🌌 Light Glow Effects */}
       <motion.div
         initial={{ opacity: 0.3, y: 10 }}

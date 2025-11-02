@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between fixed top-[-30] px-8 md:px-20 py-20 bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700 text-white overflow-hidden ">
+    <section className="relative flex flex-col md:flex-row items-center justify-between fixed top-[-30] px-8 md:px-20 py-30 bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-700 text-white overflow-hidden ">
       
       {/* Left Side - Text */}
       <motion.div
