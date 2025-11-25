@@ -36,18 +36,25 @@ export default function Footer() {
           <p className="text-gray-300 text-base mb-5 leading-relaxed">
             Delivering reliable, high-quality diagnostic results with expert care and innovation.
           </p>
+          {/* Social Icons */}
           <div className="flex space-x-3 mt-4">
-            {[FaFacebookF, FaInstagram].map((Icon, i) => (
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ scale: 1.2 }}
-                className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-xl 
-                           hover:bg-white hover:text-indigo-900 shadow-md hover:shadow-2xl transition-all duration-300"
-              >
-                <Icon className="text-lg" />
-              </motion.a>
-            ))}
+            <motion.a
+              href="https://www.facebook.com/people/Rimsha-Lab/100089841353846/"
+              target="_blank"
+              whileHover={{ scale: 1.2 }}
+              className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white hover:text-indigo-900 transition-all duration-300"
+            >
+              <FaFacebookF className="text-lg" />
+            </motion.a>
+
+            <motion.a
+              href="https://www.instagram.com/rimshalab/"
+              target="_blank"
+              whileHover={{ scale: 1.2 }}
+              className="w-10 h-10 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white hover:text-indigo-900 transition-all duration-300"
+            >
+              <FaInstagram className="text-lg" />
+            </motion.a>
           </div>
         </div>
 
@@ -59,7 +66,6 @@ export default function Footer() {
               { name: "Home", path: "/" },
               { name: "About Us", path: "/about" },
               { name: "Services", path: "/services" },
-              { name: "Gallery", path: "/gallery" },
               { name: "Contact", path: "/contact" },
             ].map((link, i) => (
               <motion.li

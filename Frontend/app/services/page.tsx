@@ -44,18 +44,19 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="relative bg-white">
+    <main className="relative bg-white fixed top-24">
+
       {/* HERO */}
       <section className="relative bg-gray-900 text-white overflow-hidden">
-        <div className="relative h-[56vh] md:h-[60vh]">
+        <div className="relative h-[66vh] md:h-[100vh]">
           <Image
-            src="/services-hero.jpg"
+            src="/services.jpg"
             alt="Laboratory hero"
             fill
             className="object-cover object-center brightness-[0.55]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-10">
             <motion.div
               initial={{ x: -40, opacity: 0 }}
@@ -73,18 +74,18 @@ export default function ServicesPage() {
               </p>
 
               <div className="mt-8 flex gap-4">
-                <Link href="/book-appointment">
+                <Link href="/BookingSample">
                   <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    className="bg-indigo-500 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-indigo-600"
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-indigo-500 px-6 py-3 rounded-lg font-semibold shadow-xl hover:bg-indigo-600 transition"
                   >
                     Book Home Collection
                   </motion.button>
                 </Link>
                 <Link href="/services#departments">
                   <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    className="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold shadow-md hover:brightness-95"
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold shadow-md hover:brightness-95 transition"
                   >
                     Explore Departments
                   </motion.button>
@@ -100,7 +101,7 @@ export default function ServicesPage() {
             >
               <div className="relative w-full h-[320px]">
                 <Image
-                  src="/home-sample.jpg"
+                  src="/HomeSampling.jpg"
                   alt="Home sampling"
                   fill
                   className="object-cover object-center"
@@ -135,7 +136,7 @@ export default function ServicesPage() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className="group relative rounded-2xl overflow-hidden shadow-lg"
+                className="group relative rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -158,50 +159,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FREE HOME COLLECTION spotlight */}
-      <section className="py-14 bg-indigo-50">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-          <motion.div
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="space-y-4"
-          >
-            <h3 className="text-3xl font-extrabold text-indigo-900">Free Home Sample Collection</h3>
-            <p className="text-gray-700">
-              Our qualified phlebotomists perform safe, hygienic sample collection at your home — free in covered areas.
-              Book online or via WhatsApp and get reports delivered electronically. (Coverage & scheduling subject to location.) 
-            </p>
-            <div className="flex gap-4 mt-4">
-              <Link href="/book-appointment">
-                <motion.button whileHover={{ scale: 1.03 }} className="bg-indigo-600 text-white px-6 py-3 rounded-md">Book Now</motion.button>
-              </Link>
-              <Link href="/contact">
-                <motion.button whileHover={{ scale: 1.03 }} className="bg-white text-indigo-900 px-6 py-3 rounded-md shadow">Contact Us</motion.button>
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ x: 30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="rounded-2xl overflow-hidden shadow-xl"
-          >
-            <div className="relative w-full h-64">
-              <Image src="/HomeSampling.jpg" alt="Home sample" fill className="object-cover" />
-              <div className="absolute inset-0 bg-black/25" />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+      
       {/* DETAILED DEPARTMENTS */}
       <section id="departments" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 space-y-16">
-          {/* Histopathology */}
+          {/** Reuse same pattern for each department: image + text */}
+          {/* Example for Histopathology */}
           <article id="histopathology" className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="relative h-72 rounded-2xl overflow-hidden shadow-2xl">
               <Image src="/HistoPathology.jpg" alt="Histopathology" fill className="object-cover" />
@@ -221,7 +184,8 @@ export default function ServicesPage() {
             </div>
           </article>
 
-          {/* Chemical Pathology */}
+          {/** Repeat for Chemical, Haematology, Micro-Molecular */}
+          {/* Chemical */}
           <article id="chemical" className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h4 className="text-2xl font-bold text-gray-900">Chemical Pathology</h4>
@@ -240,7 +204,7 @@ export default function ServicesPage() {
             </motion.div>
           </article>
 
-          {/* Haematopathology */}
+          {/* Haematology */}
           <article id="hematology" className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="relative h-72 rounded-2xl overflow-hidden shadow-2xl">
               <Image src="/HaematoPathology.jpg" alt="Haematopathology" fill className="object-cover" />
@@ -259,7 +223,7 @@ export default function ServicesPage() {
             </div>
           </article>
 
-          {/* Microbiology & Molecular */}
+          {/* Micro-Molecular */}
           <article id="micro-molecular" className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h4 className="text-2xl font-bold text-gray-900">Microbiology & Molecular Diagnostics</h4>
@@ -289,14 +253,15 @@ export default function ServicesPage() {
           </div>
           <div className="flex gap-4">
             <Link href="/contact">
-              <button className="bg-white text-indigo-900 px-6 py-3 rounded-md font-semibold">Contact Us</button>
+              <button className="bg-white text-indigo-900 px-6 py-3 rounded-md font-semibold cursor-pointer shadow-md hover:brightness-95 transition">Contact Us</button>
             </Link>
-            <Link href="/book-appointment">
-              <button className="bg-indigo-500 px-6 py-3 rounded-md font-semibold">Book Now</button>
+            <Link href="/BookingSample">
+              <button className="bg-indigo-500 px-6 py-3 rounded-md font-semibold cursor-pointer shadow-md hover:bg-indigo-600 transition">Book Now</button>
             </Link>
           </div>
         </div>
       </section>
+
     </main>
   );
 }

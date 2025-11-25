@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <nav
-      className="fixed top-16 left-3 right-3 z-50 
-                 bg-indigo-900/90 text-white py-3 
+      className="fixed top-18 left-3 right-3 z-50 
+                 bg-indigo-900/95 text-white py-3 
                  shadow-2xl rounded-3xl 
                  backdrop-blur-lg border border-white/10 
                  transition-all duration-500 ease-in-out
@@ -83,6 +83,7 @@ export default function Navbar() {
             </Link>
             <span className="absolute left-0 -bottom-1 w-0 group-hover:w-full h-[2px] bg-white transition-all duration-300 ease-in-out"></span>
           </li>
+          
         </ul>
       </div>
     </nav>

@@ -1,68 +1,100 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Buttons() {
+  const router = useRouter();
+
   const buttonData = [
     {
       text: "Health Card",
       image: "/HealthCard.jpg",
+      path: "/HealthCardApply"
     },
     {
       text: "Book Appointment",
       image: "/BookAppointment.jpg",
+      path: "/BookingSample"
     },
     {
-      text: "Gallery",
+      text: "Explore Departments",
       image: "/Gallery.jpg",
+      path: "/services#departments"
     },
     {
       text: "Contact Us",
       image: "/Contactus.jpg",
+      path: "/contact"
     },
   ];
 
+  const handleClick = (path: string) => {
+    router.push(path);
+  };
+
   return (
-    <section className="relative py-28 bg-gradient-to-br from-indigo-50 via-white to-indigo-100 text-center overflow-hidden">
-      {/* 🌈 Decorative Glows */}
-      <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-indigo-300/40 blur-[180px]" />
-      <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-blue-300/40 blur-[180px]" />
+    <section className="relative py-40 bg-gradient-to-br from-indigo-100 via-white to-indigo-200 text-center overflow-hidden">
 
-      {/* 🩺 Button Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 px-8 relative z-10 cursor-pointer">
-        {buttonData.map((item, i) => (
-          <motion.div
-            key={i}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 20px 50px rgba(79, 70, 229, 0.4)",
-            }}
-            whileTap={{ scale: 0.96 }}
-            className="relative group rounded-3xl overflow-hidden shadow-2xl transition-all duration-700"
-          >
-            {/* 🖼 Background image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-              style={{ backgroundImage: `url(${item.image})` }}
-            ></div>
+  {/* Soft glowing blobs */}
+  <div className="absolute top-[-10rem] left-[-10rem] w-[40rem] h-[40rem] bg-indigo-400/30 blur-[200px] rounded-full" />
+  <div className="absolute bottom-[-10rem] right-[-10rem] w-[40rem] h-[40rem] bg-blue-400/30 blur-[200px] rounded-full" />
 
-            {/* 🌌 Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/80 via-indigo-800/60 to-indigo-900/80"></div>
+  {/* Heading */}
+  <motion.h2
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="text-5xl font-extrabold text-indigo-900 mb-20 drop-shadow-lg tracking-wide"
+  >
+    Explore Our Services
+  </motion.h2>
 
-            {/* ✨ Shimmer line */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent 
-                            translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1200ms] ease-in-out"></div>
+  {/* Grid */}
+  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-14 px-10 relative z-20">
+    {buttonData.map((item, i) => (
+      <motion.div
+        key={i}
+        whileHover={{
+          scale: 1.08,
+          rotate: 1,
+          boxShadow: "0px 30px 80px rgba(88, 28, 255, 0.35)",
+        }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 120, damping: 12 }}
+        onClick={() => handleClick(item.path)}
+        className="relative group rounded-3xl overflow-hidden shadow-2xl cursor-pointer
+                   backdrop-blur-xl bg-white/10 border border-white/30"
+      >
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-[1600ms] group-hover:scale-125 group-hover:rotate-1"
+          style={{ backgroundImage: `url(${item.image})` }}
+        />
 
-            {/* 💬 Text */}
-            <div className="relative z-10 flex items-center justify-center py-16 text-white text-3xl font-bold tracking-wide uppercase">
-              {item.text}
-            </div>
+        {/* Deep Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 opacity-90" />
 
-            {/* 🌟 Border glow */}
-            <div className="absolute inset-0 border border-indigo-400/20 group-hover:border-indigo-300/50 rounded-3xl transition-all duration-500"></div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+        {/* Neon Border Glow */}
+        <div className="absolute inset-0 rounded-3xl border border-indigo-300/20 
+                        group-hover:border-indigo-400/60 transition-all duration-700" />
+
+        {/* Animated Light Sweep */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
+                        translate-x-[-100%] group-hover:translate-x-[100%] 
+                        transition-transform duration-[1400ms] ease-in-out"></div>
+
+        {/* Text */}
+        <div className="relative z-10 flex items-center justify-center py-20">
+          <span className="text-white text-4xl font-extrabold tracking-widest drop-shadow-2xl uppercase 
+                           group-hover:text-indigo-200 transition-all duration-700">
+            {item.text}
+          </span>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
   );
 }

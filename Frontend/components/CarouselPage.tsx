@@ -22,7 +22,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="relative w-full left-0.1 h-[80vh] fixed top-[-40] overflow-hidden rounded-xl shadow-lg mt-[90px]">
+    <div className="relative w-full left-0.1 h-[80vh] fixed top-[-0] overflow-hidden rounded-xl shadow-lg mt-[90px]">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}

@@ -44,7 +44,7 @@ export default function LabQualityPolicy() {
         <div className="md:w-1/2 relative group">
           <div className="relative w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl border-4 border-indigo-200 group-hover:border-indigo-500 transition-all duration-500">
             <Image
-              src="/quality-policy.jpg"
+              src="/lab_quality.jpg"
               alt="Lab Quality Policy"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
